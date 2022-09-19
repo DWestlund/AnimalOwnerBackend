@@ -16,6 +16,11 @@ public class Owner {
     private String lastname;
     @Column(name = "age")
     private long age;
+
+    //TODO Testa om detta funkar - sen skapa tables och data
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id_fk", referencedColumnName = "address_id")
+    private Address address;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "owners_animals",
@@ -26,17 +31,19 @@ public class Owner {
 
     public Owner() {
     }
-    public Owner(String firstname, String lastname, long age, List<Animal> animals) {
+    public Owner(String firstname, String lastname, long age, Address address, List<Animal> animals) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
+        this.address = address;
         this.animals = animals;
     }
-    public Owner(long ownerId, String firstname, String lastname, long age, List<Animal> animals) {
+    public Owner(long ownerId, String firstname, String lastname, long age, Address address, List<Animal> animals) {
         this.ownerId = ownerId;
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
+        this.address = address;
         this.animals = animals;
     }
 
