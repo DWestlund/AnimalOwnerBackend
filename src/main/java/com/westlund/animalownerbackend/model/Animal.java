@@ -16,7 +16,6 @@ public class Animal {
     private String name;
     @Column(name = "age")
     private int age;
-
     @JsonIgnore//För att inte det ska bli rundgång
     @ManyToMany(mappedBy = "animals")
     private List<Owner> owners;

@@ -5,7 +5,6 @@ import com.westlund.animalownerbackend.model.Address;
 import java.util.List;
 
 public interface AddressServiceInterface {
-
     List<Address> getAllAddresses();
     Address saveAddress(Address address);
     Address findAddressById(long id);

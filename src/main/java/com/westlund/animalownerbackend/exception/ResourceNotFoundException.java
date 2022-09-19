@@ -1,6 +1,7 @@
 package com.westlund.animalownerbackend.exception;
 
 public class ResourceNotFoundException extends RuntimeException{
+
     private static final long serialVersionUID = 1L; //Används gör versionskontroll av våra objekt
     private String objClass;
     private String field;

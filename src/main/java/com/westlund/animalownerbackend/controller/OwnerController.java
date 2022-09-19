@@ -1,6 +1,5 @@
 package com.westlund.animalownerbackend.controller;
 
-import com.westlund.animalownerbackend.model.Address;
 import com.westlund.animalownerbackend.model.Owner;
 import com.westlund.animalownerbackend.service.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +45,4 @@ public class OwnerController {
     public ResponseEntity<Owner> addAddress(@PathVariable("oId") long oId, @PathVariable("aId") long aId){
         return new ResponseEntity<Owner>(ownerService.addAddressToOwner(oId,aId), HttpStatus.OK);
     }
-
 }

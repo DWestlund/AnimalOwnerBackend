@@ -6,7 +6,6 @@ import com.westlund.animalownerbackend.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Column;
 import java.util.List;
 
 @Service
@@ -49,6 +48,7 @@ public class AddressService implements AddressServiceInterface{
     public String deleteAddressById(long id) {
         addressRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Address", "Id", id));
         addressRepository.deleteById(id);
+
         return "Deleted address with id: " + id;
     }
 }

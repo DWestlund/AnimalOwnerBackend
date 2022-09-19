@@ -1,7 +1,6 @@
 package com.westlund.animalownerbackend.controller;
 
 import com.westlund.animalownerbackend.model.Address;
-import com.westlund.animalownerbackend.model.Owner;
 import com.westlund.animalownerbackend.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,6 +40,4 @@ public class AddressController {
     public ResponseEntity<String> deleteAddressById(@PathVariable("id") long id){
         return new ResponseEntity<String>(addressService.deleteAddressById(id), HttpStatus.OK);
     }
-
-
 }
