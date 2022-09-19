@@ -1,18 +1,22 @@
 package com.westlund.animalownerbackend.service;
 
 import com.westlund.animalownerbackend.exception.ResourceNotFoundException;
+import com.westlund.animalownerbackend.model.Address;
 import com.westlund.animalownerbackend.model.Owner;
 import com.westlund.animalownerbackend.repository.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OwnerService implements OwnerServiceInterface{
 
     @Autowired
     private OwnerRepository ownerRepository;
+    @Autowired
+    private AddressService addressService;
 
     @Override
     public List<Owner> getAllOwners() {
@@ -47,4 +51,12 @@ public class OwnerService implements OwnerServiceInterface{
         ownerRepository.deleteById(id);
         return "Deleted owner with id: " + id;
     }
+
+    public Owner addAddressToOwner(long oId, long aId){
+        Owner owner = findOwnerById(oId);
+        owner.setAddress(addressService.findAddressById(aId));
+
+        return ownerRepository.save(owner);
+    }
+
 }
