@@ -1,9 +1,9 @@
-INSERT INTO owners(firstname, lastname, age)
-VALUES ('Adam', 'Adamsson', 10),
-       ('Berit', 'Beritsson', 20),
-       ('Carl', 'Carlsson', 30),
-       ('Daniel', 'Danielsson', 40),
-       ('Erika', 'Eriksson', 50);
+INSERT INTO owners(firstname, lastname, age, address_id_fk)
+VALUES ('Adam', 'Adamsson', 10, null),
+       ('Berit', 'Beritsson', 20, null),
+       ('Carl', 'Carlsson', 30, null),
+       ('Daniel', 'Danielsson', 40, null),
+       ('Erika', 'Eriksson', 50, null);
 
 INSERT INTO animals(name, age)
 VALUES ('Assy', 1),
@@ -17,3 +17,10 @@ VALUES (1, 5),
        (1, 4),
        (2, 4),
        (3, 3);
+
+INSERT INTO addresses(street, street_num, postal_code, city)
+VALUES ('Salamandervagen', 30, 80638, 'Gävle'),
+       ('Storgatan', 12, 83143, 'Östersund'),
+       ('Vattugatan', 10, 86544, 'Örebro'),
+       ('Kungsgatan', 207, 86633, 'Stockholm'),
+       ('Arenavägen', 13, 84112, 'Göteborg');
