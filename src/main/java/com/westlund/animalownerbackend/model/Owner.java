@@ -16,8 +16,6 @@ public class Owner {
     private String lastname;
     @Column(name = "age")
     private long age;
-
-    //TODO Testa om detta funkar - sen skapa tables och data
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id_fk", referencedColumnName = "address_id")
     private Address address;

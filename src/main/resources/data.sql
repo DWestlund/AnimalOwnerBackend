@@ -1,9 +1,9 @@
 INSERT INTO owners(firstname, lastname, age, address_id_fk)
-VALUES ('Adam', 'Adamsson', 10, null),
-       ('Berit', 'Beritsson', 20, null),
-       ('Carl', 'Carlsson', 30, null),
-       ('Daniel', 'Danielsson', 40, null),
-       ('Erika', 'Eriksson', 50, null);
+VALUES ('Adam', 'Adamsson', 10, NULL),
+       ('Berit', 'Beritsson', 20, NULL),
+       ('Carl', 'Carlsson', 30, NULL),
+       ('Daniel', 'Danielsson', 40, NULL),
+       ('Erika', 'Eriksson', 50, NULL);
 
 INSERT INTO animals(name, age)
 VALUES ('Assy', 1),
