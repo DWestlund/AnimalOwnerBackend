@@ -41,4 +41,8 @@ public class OwnerController {
         return new ResponseEntity<String>(ownerService.deleteOwnerById(id), HttpStatus.OK);
     }
 
+    @PutMapping("/{oId}/address/add/{aId}")
+    public ResponseEntity<Owner> addAddress(@PathVariable("oId") long oId, @PathVariable("aId") long aId){
+        return new ResponseEntity<Owner>(ownerService.addAddressToOwner(oId,aId), HttpStatus.OK);
+    }
 }

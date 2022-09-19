@@ -36,6 +36,7 @@ public class AnimalService implements AnimalServiceInterface{
             animal.setName(_animal.getName());
         if (_animal.getAge() > 0)
             animal.setAge(_animal.getAge());
+
         return animalRepository.save(animal);
     }
 
@@ -43,6 +44,7 @@ public class AnimalService implements AnimalServiceInterface{
     public String deleteAnimalById(long id) {
         animalRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Animal", "Id", id));
         animalRepository.deleteById(id);
+
         return "Deleted owner with id: " + id;
     }
 }

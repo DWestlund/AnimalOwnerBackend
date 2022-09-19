@@ -1,11 +1,23 @@
 drop table if exists owners;
 drop table if exists animals;
 
+CREATE TABLE addresses (
+    address_id bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    street VARCHAR(255),
+    street_num INTEGER,
+    postal_code INTEGER,
+    city VARCHAR(255)
+
+);
+
 create table owners(
     owner_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(255),
     lastname VARCHAR(255),
-    age INTEGER
+    age INTEGER,
+    address_id_fk BIGINT,
+
+    FOREIGN KEY (address_id_fk) REFERENCES addresses(address_id)
 );
 
 create table animals(

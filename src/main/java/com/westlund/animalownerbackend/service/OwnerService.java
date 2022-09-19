@@ -13,6 +13,8 @@ public class OwnerService implements OwnerServiceInterface{
 
     @Autowired
     private OwnerRepository ownerRepository;
+    @Autowired
+    private AddressService addressService;
 
     @Override
     public List<Owner> getAllOwners() {
@@ -38,6 +40,7 @@ public class OwnerService implements OwnerServiceInterface{
             owner.setLastname(_owner.getLastname());
         if (_owner.getAge() > 0)
             owner.setAge(_owner.getAge());
+
         return ownerRepository.save(owner);
     }
 
@@ -45,6 +48,15 @@ public class OwnerService implements OwnerServiceInterface{
     public String deleteOwnerById(long id) {
         ownerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Owner", "Id", id));
         ownerRepository.deleteById(id);
+
         return "Deleted owner with id: " + id;
     }
+
+    public Owner addAddressToOwner(long oId, long aId){
+        Owner owner = findOwnerById(oId);
+        owner.setAddress(addressService.findAddressById(aId));
+
+        return ownerRepository.save(owner);
+    }
+
 }

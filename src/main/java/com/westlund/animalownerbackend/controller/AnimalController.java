@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/animal")
 public class AnimalController {
+
     @Autowired
     private AnimalService animalService;
 
