@@ -163,3 +163,6 @@ fabric.properties
 # IntelliJ project files
 out
 gen
+/.mvn/wrapper/maven-wrapper.properties
+/mvnw
+/mvnw.cmd
